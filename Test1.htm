@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div{text-align: center;}
+</style>
+<div>
+<img src="https://th.bing.com/th?q=NIT+Warangal+Logo.png&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=strict&t=1&mw=247" alt=" ">
+<title>Registration Form</title>
+</head>
+<body style="background-color: aquamarine;">
+<form id="MyForm" onsubmit="return validateForm()">
+<h1>Registration Form</h1>
+<hr>
+<marquee><h3>Fill the Form For Internships.</h3></marquee>
+<hr>
+First name:
+<input type="text" name="firstname" id="firstname">
+Last name:
+<input type="text" name="lastname" id="lastname">
+<br>
+Email:<br>
+<input type="text" name="email" id="email">
+<br>
+DOB:<br>
+<input type="date" name="dob" id="dob">
+<br>
+Mobile No.:<br>
+<input type="number" name="mobile" id="mobile">
+<br>
+CGPA:<br>
+<input type="number" name="CGPA" id="CGPA">
+<br>
+Permanent Address:<br>
+<input type="text" name="PermanentAddress" id="PermanentAddress">
+<br>
+<p> Select your Known Programming Language:</p>
+<input type="checkbox" id="java" name="programmingLanguage" value="Java">
+<label for="java">Java</label>
+<input type="checkbox" id="cpp" name="programmingLanguage" value="C++">
+<label for="cpp">C++</label>
+<input type="checkbox" id="python" name="programmingLanguage" value="Python">
+<label for="python">Python</label>
+<input type="checkbox" id="dart" name="programmingLanguage" value="Dart">
+<label for="dart">Dart</label>
+<p>Interested area</p>
+<select name="dropdown" id="dropdown">
+<option value="AI" selected>AI</option>
+<option value="Machine Learning">Machine Learning</option>
+</select>
+<br>
+<p>Select your Age:</p>
+<input type="radio" id="age1" name="age" value="15-30">
+<label for="age1">15 to 30</label><br>
+<input type="radio" id="age2" name="age" value="31-45">
+<label for="age2">31 to 45</label><br>
+<br>
+Gender:<br>
+<select name="gender" id="gender">
+<option value="Other" selected>Other</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+<option value="Select">Select</option>
+</select>
+<br>
+<br>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
+<button type="button" onclick="alert('Form OK')">OK</button>
+</form>
+
+<script>
+function validateForm() {
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    var email = document.getElementById("email").value;
+    var dob = document.getElementById("dob").value;
+    var mobile = document.getElementById("mobile").value;
+    var CGPA = document.getElementById("CGPA").value;
+    var PermanentAddress = document.getElementById("PermanentAddress").value;
+    var gender = document.getElementById("gender").value;
+
+    if(firstname == "" || lastname == "" || email == "" || dob == "" || mobile == "" || CGPA == "" || PermanentAddress == "" || gender == "Select") {
+        alert("All fields must be filled out");
+        return false;
+    } 
+    else if(!validateEmail(email)) {
+        alert("Invalid email format");
+        return false;
+    } else {
+        alert("Form is Submitted Succesfully!");
+    }
+    return true;
+}
+
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+</script>
+</body>
+</html>
